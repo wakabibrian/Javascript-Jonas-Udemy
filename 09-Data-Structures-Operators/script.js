@@ -72,7 +72,44 @@ const restaurant = {
   },
 };
 
+// ========== Short Circuiting (&& and ||) =============== //
+
+// About Logical operators
+// They can use ANY data type, return ANY data type, short circuiting
+//  for || if the first value is a truth value, it will immediately return that truth value
+// console.log(3 || 'Wakabi');
+// console.log('' || 'Wakabi');
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+//  for && if the first value is a false value, it will immediately return that false value
+console.log(0 && 'Wakabi');
+console.log(7 && 'Wakabi');
+console.log(23 && 'Wakabi' && null && 'Miracle');
+
+// Practicle Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('Mushroom', 'Spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
+
+// ========== The Nullish Coalescing Operator (??) =============== //
+// This works almost the same as the || operator but fixes the 0 and "", "It take the 0 and "" as a trueth value"
+// Nullish values include null and undefined
+restaurant.numGuests = 0;
+const guests3 = restaurant.numGuests ?? 10;
+console.log(guests3);
+
 // ========== Rest Pattern and Parameters =============== //
+/*
 // 1) Destructuring
 // Rest Pattern collects mmultiple elements and condences them into an array
 // While spread operator unpacks an array
@@ -109,6 +146,7 @@ add(...x);
 
 restaurant.orderPizza('Mushrooms', 'Cheeze', 'Tomatoes', 'Onions');
 restaurant.orderPizza('Mushrooms');
+*/
 
 // ========== The Spread Operator (...) =============== //
 /*
