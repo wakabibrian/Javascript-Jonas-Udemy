@@ -65,9 +65,53 @@ const restaurant = {
       `Here is your delicious Pasta with ${ing1}, ${ing2}, and ${ing3}`,
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+// ========== Rest Pattern and Parameters =============== //
+// 1) Destructuring
+// Rest Pattern collects mmultiple elements and condences them into an array
+// While spread operator unpacks an array
+
+// SPREAD is used on the right side of the = operator
+
+// REST is used on the left side of the = operator, togethe with destructuring
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFoods] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFoods);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(1, 2);
+add(1, 2, 3, 4, 5);
+add(1, 2, 3, 4, 5, 6, 7);
+
+const x = [1, 2, 3];
+add(...x);
+
+restaurant.orderPizza('Mushrooms', 'Cheeze', 'Tomatoes', 'Onions');
+restaurant.orderPizza('Mushrooms');
+
 // ========== The Spread Operator (...) =============== //
+/*
 const arr = [7, 8, 9];
 // Adding new items at the beginning of the array
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -111,6 +155,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Wakabi Restaurant';
 console.log(restaurant);
 console.log(restaurantCopy);
+*/
 
 // ========== Destructuring Objects =============== //
 /*
