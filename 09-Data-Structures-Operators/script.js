@@ -59,7 +59,58 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`,
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious Pasta with ${ing1}, ${ing2}, and ${ing3}`,
+    );
+  },
 };
+
+// ========== The Spread Operator (...) =============== //
+const arr = [7, 8, 9];
+// Adding new items at the beginning of the array
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+const goodNewArr = [1, 2, ...arr];
+console.log(goodNewArr);
+console.log(...goodNewArr);
+// Whenever we need elements of the array individually we can use the spread operator
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Spread Operator works on all iterables; arrays, strings, maps and sets but not objects
+// Spread operator on strings
+const str = 'Wakabi';
+const letters = [...str];
+console.log(letters);
+
+// Real-world example
+// const ingredients = [
+//   prompt("Let's make pasta; Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestaurant = { foundedIn: 1990, ...restaurant, founder: 'Wakabi' };
+console.log(newRestaurant);
+
+// Copy objects
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Wakabi Restaurant';
+console.log(restaurant);
+console.log(restaurantCopy);
 
 // ========== Destructuring Objects =============== //
 /*
