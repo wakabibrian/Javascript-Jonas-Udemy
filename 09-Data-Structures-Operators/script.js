@@ -72,6 +72,15 @@ const restaurant = {
   },
 };
 
+// ========== Looping Arrays: The for-of Loop =============== //
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+for (const item of menu.entries()) console.log(item);
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
 // ========== Logical Assignment Operators =============== //
 /*
 const rest1 = {
@@ -315,6 +324,7 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -392,3 +402,4 @@ printGoals(...game.scored);
 // 7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
 team1 < team2 && console.log('Team1 more likely to win');
 team2 < team1 && console.log('Team2 more likely to win');
+*/
