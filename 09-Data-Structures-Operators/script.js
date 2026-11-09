@@ -72,8 +72,41 @@ const restaurant = {
   },
 };
 
-// ========== Short Circuiting (&& and ||) =============== //
+// ========== Logical Assignment Operators =============== //
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
 
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR Assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// Nullish Assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND Assignment operator
+// rest1.owner = rest1.owner && 'Anonymous';
+// rest2.owner = rest2.owner && 'Anonymous';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+
+// ========== Short Circuiting (&& and ||) =============== //
+/*
 // About Logical operators
 // They can use ANY data type, return ANY data type, short circuiting
 //  for || if the first value is a truth value, it will immediately return that truth value
@@ -107,7 +140,7 @@ restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
 restaurant.numGuests = 0;
 const guests3 = restaurant.numGuests ?? 10;
 console.log(guests3);
-
+*/
 // ========== Rest Pattern and Parameters =============== //
 /*
 // 1) Destructuring
