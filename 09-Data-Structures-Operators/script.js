@@ -4,24 +4,6 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const italianFoods = new Set([
-  'pasta',
-  'gnocchi',
-  'tomatoes',
-  'olive oil',
-  'garlic',
-  'basil',
-]);
-
-const mexicanFoods = new Set([
-  'tortillas',
-  'beans',
-  'rice',
-  'tomatoes',
-  'avocado',
-  'garlic',
-]);
-
 const weekdays = ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun'];
 
 const openingHours = {
@@ -72,7 +54,52 @@ const restaurant = {
   },
 };
 
+// ========== New Operations to Make Sets Useful! =============== //
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+// Getting the common elements
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log('Intersection:', commonFoods);
+console.log([...commonFoods]);
+
+// Combining the 2 sets with the unique elements
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log('Union:', italianMexicanFusion);
+console.log([...italianMexicanFusion]);
+
+// Elements which are different in 1 set
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+console.log('Difference Italian:', uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+console.log('Difference Mexican:', uniqueMexicanFoods);
+
+// All the elements that are present in either set but not both
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+console.log(uniqueItalianAndMexicanFoods);
+
+// Checking if one set is completely different from another set
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
 // ========== Sets =============== //
+/*
 // A collection of unique values
 const orderSet = new Set([
   'Pasta',
@@ -122,6 +149,7 @@ console.log(uniquePositions);
 
 const differentLetters = new Set('Wakabi').size;
 console.log(differentLetters);
+*/
 
 // ========== Coding Challenge 2 =============== //
 // Coding Challenge #2
