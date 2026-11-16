@@ -72,6 +72,57 @@ const restaurant = {
   },
 };
 
+// ========== Sets =============== //
+// A collection of unique values
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet);
+
+const wakabiSet = new Set('Wakabi');
+console.log(wakabiSet);
+
+// Size of a set
+console.log(orderSet.size);
+
+// If a certain element is in the array
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+
+// Add new element to a set
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+
+// Delete an element from a set
+orderSet.delete('Risotto');
+console.log(orderSet);
+
+// How to retrive values from the set
+// There is no way of retriving values from a set
+
+// Deleting all the elements from a set
+// orderSet.clear();
+// console.log(orderSet);
+
+// Looping sets
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+const uniquePositions = new Set(staff).size;
+console.log(uniquePositions);
+
+const differentLetters = new Set('Wakabi').size;
+console.log(differentLetters);
+
 // ========== Coding Challenge 2 =============== //
 // Coding Challenge #2
 
@@ -95,7 +146,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 
 GOOD LUCK 😀
 */
-
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -189,6 +240,7 @@ for (const [goal, scorer] of game.scored.entries()) {
 }
 
 console.log(scores);
+*/
 
 // ========== Looping Objects: Object Keys, Values, and Entries =============== //
 /*
