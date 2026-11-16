@@ -54,7 +54,57 @@ const restaurant = {
   },
 };
 
+// ========== Maps: Fundamentals =============== //
+// In maps we can have any type of keys
+// creating a map
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenz, Italy');
+rest.set(2, 'Lisbon, Portugal');
+// Also returns the map
+console.log(rest.set('size', 35));
+
+// You can chain the add
+rest
+  .set('categories', ['Vegetarian', 'Pizzeria', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+console.log(rest);
+
+// Reading data from the map
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+// Example
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// Checking if a map contains a key
+console.log(rest.has('categories'));
+
+// Deleting a property
+rest.delete(2);
+console.log(rest);
+
+// Size of a map
+console.log(rest.size);
+
+// Clearing the map
+// rest.clear();
+// console.log(rest);
+
+// Using arrays or objects as map keys
+const array = [1, 2];
+rest.set(array, 'Test');
+console.log(rest.get(array));
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+
 // ========== New Operations to Make Sets Useful! =============== //
+/*
 const italianFoods = new Set([
   'pasta',
   'gnocchi',
@@ -97,6 +147,7 @@ console.log(uniqueItalianAndMexicanFoods);
 
 // Checking if one set is completely different from another set
 console.log(italianFoods.isDisjointFrom(mexicanFoods));
+*/
 
 // ========== Sets =============== //
 /*
