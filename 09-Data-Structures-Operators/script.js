@@ -54,6 +54,50 @@ const restaurant = {
   },
 };
 
+// ========== Working With Strings - Part 1=============== //
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+// Length of a string
+console.log(airline.length);
+console.log('B737'.length);
+
+// Position of a certain element
+console.log(airline.indexOf('A'));
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.lastIndexOf('Portugal'));
+
+// Cutting a piece of a sentence/sub string
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7)); //Length of the extract string is end - beginning (7-4)
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// Negative indices
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+// Example
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const letter = seat.slice(-1);
+  if (letter === 'B' || letter === 'E') {
+    console.log('It is a middle seat');
+  } else {
+    console.log('You got lucky.');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('3E');
+checkMiddleSeat('23C');
+
 // ========== CHALLENGE #3 =============== //
 /* 
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
@@ -66,6 +110,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
 
 GOOD LUCK 😀
 */
+/*
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -106,6 +151,7 @@ for (const [minute, event] of gameEvents) {
   const half = minute <= 45 ? '[FIRST HALF]' : '[SECOND HALF]';
   console.log(`${half} ${minute}: ${event}`);
 }
+  */
 
 // ========== Maps: Iteration =============== //
 /*
