@@ -54,7 +54,77 @@ const restaurant = {
   },
 };
 
+// ========== Working With Strings - Part 2=============== //
+// Changing the case
+const airline = 'TAP Air Portugal';
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+console.log('jonas'.toUpperCase());
+
+// Fixing capitalization in passenger name
+
+const correctNameCase = function (passName) {
+  const passengerLowerCase = passName.toLowerCase();
+  const passengerCorrect =
+    passengerLowerCase[0].toUpperCase() + passengerLowerCase.slice(1);
+  console.log(passengerCorrect);
+};
+
+correctNameCase('wAkAbi');
+correctNameCase('miRacle');
+correctNameCase('brIan');
+correctNameCase('brITNey');
+
+// Comparing emails
+const email = 'wakabibrian95@gmail.com';
+const emailEntered = '  WakabiBrian95@gmail.com  \n';
+
+const correctEmail = emailEntered.toLowerCase().trim();
+
+if (correctEmail === email) {
+  console.log('You are loggedin!');
+}
+
+// Replacing
+const priceGB = '2,145£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate')); //Regular expressions. g stands for global
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice Exercise
+const checkBaggage = function (items) {
+  // All to lower case
+  const baggage = items.toLowerCase();
+
+  // Check if includes a knife or gun
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board.');
+  } else {
+    console.log('Welcome aboard.');
+  }
+};
+
+checkBaggage('I have a laptop, Knife, book, and pen');
+checkBaggage('I have a stool, tape, top, and bottom');
+checkBaggage('I have a gun, mat, iPad, and book');
+
 // ========== Working With Strings - Part 1=============== //
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -97,6 +167,7 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('3E');
 checkMiddleSeat('23C');
+*/
 
 // ========== CHALLENGE #3 =============== //
 /* 
