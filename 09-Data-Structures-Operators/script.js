@@ -60,6 +60,7 @@ const flights =
 //            Departure from FAO to LIS (12h30)
 
 // ==========  String Methods Practice =============== //
+/*
 const getCode = str => str.slice(0, 3).toUpperCase();
 
 for (const flight of flights.split('+')) {
@@ -72,7 +73,7 @@ for (const flight of flights.split('+')) {
 
   console.log(outPut);
 }
-
+*/
 // ========== Coding Challenge 4 =============== //
 /*
 // Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
