@@ -30,6 +30,7 @@ createBooking('LH123', undefined, 1000);
 */
 
 //=============== Functions Accepting Callback Functions ===============//
+/*
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -62,3 +63,20 @@ document.body.addEventListener('click', highFive);
 // Why JS uses callbacks all the time
 // It makes it easier connect into more reusable and interconnected parts
 // Callbacks allow us to create abstractions - we hide the detail of code implementation and we don't care about those details
+*/
+
+//=============== Functions Returning Functions ===============//
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+const greetHello = greet('Hello');
+greetHello('Brian');
+greetHello('Micheal');
+greetHello('Lorryn');
+
+greet('Hola!')('Britney');
+greet('Whatsup')('Miracle');
