@@ -1,6 +1,6 @@
 'use strict';
 //=============== Default Parameters ===============//
-
+/*
 const bookings = [];
 
 const createBooking = function (
@@ -27,3 +27,38 @@ createBooking('LH123', 2, 800);
 createBooking('LH123', 2);
 createBooking('LH123', 5);
 createBooking('LH123', undefined, 1000);
+*/
+
+//=============== Functions Accepting Callback Functions ===============//
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [firstWord, ...others] = str.split(' ');
+  return [firstWord.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-order functions
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('Javascript is the best', upperFirstWord);
+transformer('Javascript is the best', oneWord);
+
+// JS uses callbacks all the time
+const highFive = function () {
+  console.log('Hi Five!');
+};
+
+document.body.addEventListener('click', highFive);
+
+['Brian', 'Miracle', 'Britney'].forEach(highFive);
+
+// Why JS uses callbacks all the time
+// It makes it easier connect into more reusable and interconnected parts
+// Callbacks allow us to create abstractions - we hide the detail of code implementation and we don't care about those details
